@@ -13,7 +13,6 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 public class Application implements WebSocketConfigurer {
 
 	public static void main(String[] args) {
-		System.out.println("ey");
 		SpringApplication.run(Application.class, args);
 	}
 
