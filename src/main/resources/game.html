@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/gamestyles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <title>Snake++</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <!-- .container nos permite centrar el contenido de nuestro menu, esta clase es opcional y podemos encerrar el menu <nav> o incluir el contenedor dentro del <nav> -->
+        <div class="container">
+            <!-- Nos sirve para agregar un logotipo al menu -->
+            <a href="#" class="navbar-brand lead">
+            <img src="images/apple.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Snake++
+            </a>
+
+            <!-- Nos permite usar el componente collapse para dispositivos moviles -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Menu de Navegacion">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav mr-auto nav">
+                    <li class="nav-item active mx-3">
+                        <a href="#" class="nav-link">Inicio <span class="sr-only">(Actual)</span></a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a href="#" class="nav-link">Jugar</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a href="#" class="nav-link">Perfil</a>
+                    </li>
+                </ul>
+
+                <form class="form-inline">
+                    <button type="button" class="btn btn-outline-light mr-3 "><strong>Registrarse</strong></button>
+
+                    <button type="button" class="btn btn-ligth white-background green "><strong>Iniciar Sesión</strong></button>
+                </form>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="container" id="lobby">
+        <div class="row mt-5 d-flex justify-content-center">
+            <div class="col-8">
+                <div class="input-group px-4 py-2" style="background: white; border: 2px; border-color: black; border-radius: 25px;">
+                    <input type="text" class="form-control" placeholder="introduce un nombre de sala">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="button" data-toggle="modal" data-target="#exampleModalCenter">Crear Sala</button>
+                        <button class="btn btn-outline-success" type="button">Probar suerte</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg " role="document">
+                <div class="modal-content">
+                    <div class="modal-header ">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Primero... ¡Elige una dificultad!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card-group">
+                            <div class="card bg-info">
+                                <img class="card-img-top" src="/images/easy.png" alt="Card image cap">
+                                <div class="card-footer d-flex justify-content-center">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="dificultad" id="facil" class="custom-control-input">
+                                        <label for="facil" class="custom-control-label">Facil</label>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-light">
+                                <img class="card-img-top" src="/images/normal.png" alt="Card image cap">
+                                <div class="card-footer d-flex justify-content-center">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="dificultad" id="normal" class="custom-control-input" checked>
+                                        <label for="normal" class="custom-control-label">Normal</label>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-danger">
+                                <img class="card-img-top" src="/images/hard.png" alt="Card image cap">
+                                <div class="card-footer d-flex justify-content-center">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="dificultad" id="dificil" class="custom-control-input">
+                                        <label for="dificil" class="custom-control-label">Dificil</label>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-success">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row mt-5">
+            <div class="col-12" id="list">
+              <!--
+                   
+                       <div class="card my-1 w-100">
+                    <div class="container-fluid card-body bg-lobby">
+                        <div class="row align-items-center white">
+                            <div class="col-6">
+                                <h3 class="card-title ml-3">Final Snakes</h3>
+                            </div>
+                            <div class="col-6 text-right">
+                                <span class="card-text mr-3" style="white-space:nowrap;"><img src="images/players.png" class="mr-2" style="max-height: 30px; max-width: 30px;">3</span>
+                                <span class="card-text mr-3"><span class="badge badge-danger">DIFICIL</span></span><br>
+
+                                <button type="button" class="btn btn-success mr-2 mt-3" style="border-radius: 15px;">+ Unirse a esta sala</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card my-1 w-100">
+                    <div class="container-fluid card-body bg-lobby">
+                        <div class="row align-items-center white">
+                            <div class="col-6">
+                                <h3 class="card-title ml-3">Illo cabesa</h3>
+                            </div>
+                            <div class="col-6 text-right">
+                                <span class="card-text mr-3" style="white-space:nowrap;"><img src="images/players.png" class="mr-2" style="max-height: 30px; max-width: 30px;">4</span>
+                                <span class="card-text mr-3"><span class="badge badge-light">NORMAL</span></span><br>
+
+                                <button type="button" class="btn btn-success mr-2 mt-3" style="border-radius: 15px;" disabled>+ Unirse a esta sala</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card my-1 w-100">
+                    <div class="container-fluid card-body bg-lobby">
+                        <div class="row align-items-center white">
+                            <div class="col-6">
+                                <h3 class="card-title ml-3">Aqui te pillo aqui te como</h3>
+                            </div>
+                            <div class="col-6 text-right">
+                                <span class="card-text mr-3" style="white-space:nowrap;"><img src="images/players.png" class="mr-2" style="max-height: 30px; max-width: 30px;">Esperando a mas jugadores...</span>
+                                <span class="card-text mr-3"><span class="badge badge-info">FACIL</span></span><br>
+
+                                <button type="button" class="btn btn-success mr-2 mt-3" style="border-radius: 15px;">+ Unirse a esta sala</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card my-1 w-100">
+                    <div class="container-fluid card-body bg-lobby">
+                        <div class="row align-items-center white">
+                            <div class="col-6">
+                                <h3 class="card-title ml-3">Era mi primerito dia</h3>
+                            </div>
+                            <div class="col-6 text-right">
+                                <span class="card-text mr-3" style="white-space:nowrap;"><img src="images/players.png" class="mr-2" style="max-height: 30px; max-width: 30px;">4</span>
+                                <span class="card-text mr-3"><span class="badge badge-danger">DIFICIL</span></span><br>
+
+                                <button type="button" class="btn btn-success mr-2 mt-3" style="border-radius: 15px;" disabled>+ Unirse a esta sala</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card my-1 w-100">
+                    <div class="container-fluid card-body bg-lobby">
+                        <div class="row align-items-center white">
+                            <div class="col-6">
+                                <h3 class="card-title ml-3">Zarandonga</h3>
+                            </div>
+                            <div class="col-6 text-right">
+                                <span class="card-text mr-3" style="white-space:nowrap;"><img src="images/players.png" class="mr-2" style="max-height: 30px; max-width: 30px;">Esperando a mas jugadores...</span>
+                                <span class="card-text mr-3"><span class="badge badge-info">FACIL</span></span><br>
+
+                                <button type="button" class="btn btn-success mr-2 mt-3" style="border-radius: 15px;">+ Unirse a esta sala</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+
+    </div>
+
+   <!--
+    <div class="container mt-5" style="display: none;" id="game">
+        <div class="row px-2 py-4 align-items-center justify-content-center bg-play">
+            <div class="col-6">
+                <h1 class="ml-5 white">Nombre de la sala</h1>
+            </div>
+            <div class="col-6">
+                <h3 class="text-right mr-5 white">Num. jugadores: --</h3>
+            </div>
+            <div class="col-12 col-lg-7 mt-2 pb-5 align-self-center">
+                <canvas id="playground" width="640" height="480"></canvas>
+            </div>
+            <div class="col-12 col-lg-4 mt-1 pb-5 align-self-center" id="console-container" style="line-height: 1.5;">
+                <div id="console"></div>
+            </div>
+        </div>
+    </div>
+-->
+
+
+
+
+
+
+<!--
+
+    <footer class="jumbotron jumbotron-fluid mb-0 mt-5" style="background: #1C1C1C; color: darkgray">
+        <div class="container">
+            <p class="lead text-center">Práctica final para "Entornos Multijugador". Implementación de Juego Snake++ de forma concurrente.</p>
+            <p class="lead text-center">José Ángel Cívico Martos, Alberto Egea Garcia, Víctor Manuel Palma Morales &copy;2018</p>
+        </div>
+    </footer> -->
+    <!--
+    <footer class="jumbotron jumbotron-fluid mb-0 mt-5 fixed-bottom d-none d-xl-block" style="background: #1C1C1C; color: darkgray">
+        <div class="container">
+            <p class="lead text-center">Práctica final para "Entornos Multijugador". Implementación de Juego Snake++ de forma concurrente.</p>
+            <p class="lead text-center">José Ángel Cívico Martos, Alberto Egea Garcia, Víctor Manuel Palma Morales &copy;2018</p>
+        </div>
+    </footer>
+-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
