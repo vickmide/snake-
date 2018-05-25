@@ -7,14 +7,31 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.springframework.web.socket.WebSocketSession;
+
 public class SnakeGame {
 
 	private final static long TICK_DELAY = 100;
 
 	private ConcurrentHashMap<Integer, Snake> snakes = new ConcurrentHashMap<>();
 	private AtomicInteger numSnakes = new AtomicInteger();
+	private String roomId;
+	private WebSocketSession session;
 
 	private ScheduledExecutorService scheduler;
+	
+	public SnakeGame(String roomId, WebSocketSession session) {
+		this.roomId = roomId;
+		this.session = session;
+	}
+	
+	public WebSocketSession getSession() {
+		return this.session;
+	}
+	
+	public String getRoomId() {
+		return roomId;
+	}
 
 	public void addSnake(Snake snake) {
 
@@ -86,7 +103,7 @@ public class SnakeGame {
 		for (Snake snake : getSnakes()) {
 			try {
 
-				System.out.println("Sending message " + message + " to " + snake.getId());
+				//System.out.println("Sending message " + message + " to " + snake.getId());
 				snake.sendMessage(message);
 
 			} catch (Throwable ex) {
