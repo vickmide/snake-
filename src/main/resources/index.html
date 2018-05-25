@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <title>Snake++</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <!-- .container nos permite centrar el contenido de nuestro menu, esta clase es opcional y podemos encerrar el menu <nav> o incluir el contenedor dentro del <nav> -->
+        <div class="container">
+            <!-- Nos sirve para agregar un logotipo al menu -->
+            <a href="#" class="navbar-brand lead">
+            <img src="images/apple.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Snake++
+            </a>
+
+            <!-- Nos permite usar el componente collapse para dispositivos moviles -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Menu de Navegacion">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav mr-auto nav">
+                    <li class="nav-item active mx-3">
+                        <a href="#" class="nav-link">Inicio <span class="sr-only">(Actual)</span></a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a href="#" class="nav-link">Jugar</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a href="#" class="nav-link">Perfil</a>
+                    </li>
+                </ul>
+
+                <form class="form-inline">
+                    <button type="button" class="btn btn-outline-light mr-3 "><strong>Registrarse</strong></button>
+
+                    <button type="button" class="btn btn-ligth white-background green "><strong>Iniciar Sesión</strong></button>
+                </form>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row py-5 d-flex justify-content-end">
+                <div class="col-xs-12 col-lg-5">
+                    <div class="card border-dark">
+                        <div class="card-header">
+                            <p class="text-dark text-center mt-3" style="font-size: 20px;">
+                                <strong>Únete a la gran experiencia <br> muljugador de Snake++</strong>
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-dark">
+                                Disfruta de emocionantes partidas multijugador con:
+                            </p>
+                            <ul>
+                                <li class="text-dark">Mecánicas super adictivas.</li>
+                                <li class="text-dark">Gráficos con estilo retro a resolución 4K de última generación.</li>
+                                <li class="text-dark">Una programación concurrente que te hará flipar pepinillos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col mb-3">
+                <h2 class="text-center">Conoce las reglas de juego</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card-group">
+                <div class="card">
+                    <img class="card-img-top" src="/images/bg1.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">¡Muevete!</h3>
+                        <p class="card-text text-justify mb-3">Eres una serpiente, y como todas las serpientes, puedes moverte. Utiliza las teclas de dirección de tu teclado para moverte hacia arriba, abajo, izquierda o derecha. Mientras suene la música, ¡nunca pares de seguir bailando!</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="/images/bg2.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">¡Come, come!</h3>
+                        <p class="card-text text-justify">Durante la partida aparecerá de forma aleatoria comida en la pantalla. Nuestros programadores se han encargado de hacer un algoritmo muy chulo para que puedas comertela y aumentar de tamaño. Aprovéchalo y no dejes nada por zampar.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="/images/bg3.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">¡Destruye!</h3>
+                        <p class="card-text text-justify">No serás la única serpiente en el campo de batalla... evita que otras serpientes choquen contigo... o te devorarán. Por supuesto tu también puedes devorarlas, pero no será tarea facil. Dispones de tres vidas, no las desperdicies.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="card-group">
+                <div class="card">
+                    <img class="card-img-top" style="max-height: 250px;" src="/images/bg4.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Sal victorioso</h3>
+                        <p class="card-text text-justify mb-3">Mueve, esquiva, come y destruye. Haz todo lo que necesites para llegar hasta el final y ser el último superviviente en el campo de batalla. Si lo consigues, conseguirás puntos según la comida que hayas logrado atrapar, y los enemigos que hayas conseguido liquidar.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" style="max-height: 250px;" src="/images/bg5.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Presume de tus logros</h3>
+                        <p class="card-text text-justify">Tienes diversos logros para conseguir durante tus emocionantes partidas. Consigue matar a un numero determinados de enemigos, haz a tu serpiente mas larga que el Nilo o aguanta sin morir ni una sola vez para lograr fantásticas medallas con las que presumir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="jumbotron jumbotron-fluid mb-0 mt-5" style="background: #1C1C1C; color: darkgray">
+        <div class="container">
+            <p class="lead text-center">Práctica final para "Entornos Multijugador". Implementación de Juego Snake++ de forma concurrente.</p>
+            <p class="lead text-center">José Ángel Cívico Martos, Alberto Egea Garcia, Víctor Manuel Palma Morales &copy;2018</p> 
+        </div>
+    </footer>
+
+</body>
+
+</html>
