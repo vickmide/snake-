@@ -1,0 +1,51 @@
+#playground {
+	width: 640px;
+	height: 480px;
+	background-color: #000;
+}
+
+#console-container {
+	width: 300px;
+}
+
+#console {
+	border: 1px solid #CCCCCC;
+    background: white;
+	border-right-color: #999999;
+	border-bottom-color: #999999;
+	height: 480px;
+	overflow-y: scroll;
+	width: 100%;
+}
+
+#console p {
+	padding: 10px;
+	margin: 0;
+}
+
+body{
+    background: url(/images/bg.png);
+    background-size: cover;
+    font-family: "Roboto", sans-serif;
+}
+
+.bg-play {
+    background: url(/images/table.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bg-lobby {
+    background: url(/images/bg-lobby.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.card {
+    background-color: transparent;
+    border: 0px;
+}
+
+.white {
+    color: white;
+}

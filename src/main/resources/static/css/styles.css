@@ -1,0 +1,54 @@
+body {
+    background: white;
+    font-size: 18px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+hr{ 
+   height:1px;  
+   background-color: darkgray; 
+ }
+
+.navbar {
+    min-height: 90px;
+}
+
+.btn-outline-light:hover {
+    color:white;
+    background: green;
+    border-color: green;
+}
+
+.btn-light {
+    color:black;
+    background: white;
+}
+
+.white-background {background-color:#FFFFFF;}
+.green {color:green;}
+
+.white {color:white;}
+
+.white-background:hover{
+    color:white;
+    background-color: green;
+}
+
+.jumbotron{
+ background-image: url("/images/index.png");
+ background-size: cover;
+ background-repeat: no-repeat; 
+}
+
+h2 {
+    font-size: 40px;
+}
+h3 {
+    font-size: 25px;
+}
+
+.btn-border {
+    border-color: black;
+}
+
